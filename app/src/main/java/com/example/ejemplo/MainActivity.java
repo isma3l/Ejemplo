@@ -43,7 +43,8 @@ public class MainActivity extends AppCompatActivity {
         saldoCtaCorriente = (TextView)findViewById(R.id.saldoCtaCorriente);
         nroCajaAhorro = (TextView)findViewById(R.id.nroCajaAhorro);
         saldoCajaAhorro = (TextView)findViewById(R.id.saldoCajaAhorro);
-        ctaCorrienteEditText = (TextInputEditText)findViewById(R.id.inputExtraerCtaCorriente);
+        ctaCorrienteEditText = (TextInputEditText)findViewById(R.id.inputCtaCorriente);
+        cajaAhorroEditText = (TextInputEditText)findViewById(R.id.inputCajaAhorro);
     }
 
     private void initListeners() {
@@ -63,14 +64,14 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // Caja de ahorro
-        Button botonExtraerCajaAhorro = (Button) findViewById(R.id.botonExtraerCajaAhorro);
-        botonExtraerCajaAhorro.setOnClickListener(view -> {
+        Button botonExtraerajaAhorro = (Button) findViewById(R.id.botonExtraerCajaAhorro);
+        botonExtraerajaAhorro.setOnClickListener(view -> {
             double amount = Double.parseDouble(cajaAhorroEditText.getText().toString());
             cajaAhorro.retirar(amount);
             updateAccounts();
         });
 
-        Button botonDepositarCajaAhorro = (Button) findViewById(R.id.botonDepositarCtaCorriente);
+        Button botonDepositarCajaAhorro = (Button) findViewById(R.id.botonDepositarCajaAhorro);
         botonDepositarCajaAhorro.setOnClickListener(view -> {
             double amount = Double.parseDouble(cajaAhorroEditText.getText().toString());
             cajaAhorro.depositar(amount);

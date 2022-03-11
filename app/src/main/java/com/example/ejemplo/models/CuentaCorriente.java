@@ -1,5 +1,7 @@
 package com.example.ejemplo.models;
 
+import android.util.Log;
+
 
 public class CuentaCorriente extends Cuenta{
 
@@ -12,5 +14,7 @@ public class CuentaCorriente extends Cuenta{
     @Override
     public void retirar(double cantidad) {
         saldo = saldo - cantidad - DESCUENTO;
+        Log.v(CuentaCorriente.class.getSimpleName(), String.valueOf(cantidad));
+
     }
 }
