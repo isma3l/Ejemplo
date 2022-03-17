@@ -1,20 +1,22 @@
 package com.example.ejemplo.models;
 
 
-public abstract class Cuenta {
+public class Cuenta {
     private String numeroCuenta;
     protected double saldo;
 
-    public Cuenta(String cuenta, double inicial) {
+    public Cuenta(String cuenta, double montoInicial) {
         numeroCuenta = cuenta;
-        saldo = inicial;
+        saldo = montoInicial;
     }
 
-    public void depositar(double cantidad) {
-        saldo = saldo + cantidad;
+    public void depositar(double monto) {
+        saldo = saldo + monto;
     }
 
-    abstract public void retirar(double cantidad);
+    public void retirar(double monto) {
+        saldo -= monto;
+    }
 
     public double obtenerSaldo() {
         return saldo;

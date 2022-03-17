@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.ejemplo.models.CajaAhorro;
+import com.example.ejemplo.models.Cuenta;
 import com.example.ejemplo.models.CuentaCorriente;
 import com.google.android.material.textfield.TextInputEditText;
 
@@ -51,32 +52,34 @@ public class MainActivity extends AppCompatActivity {
         // Cuenta corriente
         Button botonExtraerCtaCorriente = (Button) findViewById(R.id.botonExtraerCtaCorriente);
         botonExtraerCtaCorriente.setOnClickListener(view -> {
-            double amount = Double.parseDouble(ctaCorrienteEditText.getText().toString());
-            cuentaCorriente.retirar(amount);
+            cuentaCorriente.retirar(getAmount(ctaCorrienteEditText));
             updateAccounts();
         });
 
         Button botonDepositarCtaCorriente = (Button) findViewById(R.id.botonDepositarCtaCorriente);
         botonDepositarCtaCorriente.setOnClickListener(view -> {
-            double amount = Double.parseDouble(ctaCorrienteEditText.getText().toString());
-            cuentaCorriente.depositar(amount);
+            cuentaCorriente.depositar(getAmount(ctaCorrienteEditText));
             updateAccounts();
         });
 
         // Caja de ahorro
         Button botonExtraerajaAhorro = (Button) findViewById(R.id.botonExtraerCajaAhorro);
         botonExtraerajaAhorro.setOnClickListener(view -> {
-            double amount = Double.parseDouble(cajaAhorroEditText.getText().toString());
-            cajaAhorro.retirar(amount);
+            cajaAhorro.retirar(getAmount(cajaAhorroEditText));
             updateAccounts();
         });
 
         Button botonDepositarCajaAhorro = (Button) findViewById(R.id.botonDepositarCajaAhorro);
         botonDepositarCajaAhorro.setOnClickListener(view -> {
-            double amount = Double.parseDouble(cajaAhorroEditText.getText().toString());
-            cajaAhorro.depositar(amount);
+            cajaAhorro.depositar(getAmount(cajaAhorroEditText));
             updateAccounts();
         });
+    }
+
+    private double getAmount(TextView textView) {
+        String text = textView.getText().toString();
+        String amount = text.isEmpty() ? "0" : text;
+        return Double.parseDouble(amount);
     }
 
     @SuppressLint("SetTextI18n")
