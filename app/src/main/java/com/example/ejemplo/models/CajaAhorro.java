@@ -2,7 +2,7 @@ package com.example.ejemplo.models;
 
 import android.util.Log;
 
-public class CajaAhorro extends Cuenta{
+public class CajaAhorro extends Cuenta {
 
     private final float DESCUENTO = 4;
 
@@ -11,13 +11,12 @@ public class CajaAhorro extends Cuenta{
     }
 
     @Override
-    public void retirar(double cantidad) {
+    public void retirar(double monto) {
         if (saldo <= 6000) {
-            saldo = saldo - cantidad - DESCUENTO;
+            saldo = saldo - monto - DESCUENTO;
         } else {
-            saldo =  saldo - cantidad;
+            saldo =  saldo - monto;
         }
-
-        Log.v(CajaAhorro.class.getSimpleName(), String.valueOf(cantidad));
+        Log.v(CajaAhorro.class.getSimpleName(), String.valueOf(monto));
     }
 }

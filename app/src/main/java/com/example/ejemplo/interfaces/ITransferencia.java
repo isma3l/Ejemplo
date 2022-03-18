@@ -1,5 +1,5 @@
 package com.example.ejemplo.interfaces;
 
-public interface IUTransferencia {
+public interface ITransferencia {
     void transferir(double monto);
 }

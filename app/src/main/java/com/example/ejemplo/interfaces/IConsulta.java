@@ -1,5 +1,5 @@
 package com.example.ejemplo.interfaces;
 
-public interface IUConsulta {
+public interface IConsulta {
     double consultarSaldo();
 }

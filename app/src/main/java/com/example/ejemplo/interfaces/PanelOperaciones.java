@@ -1,9 +1,16 @@
 package com.example.ejemplo.interfaces;
 
 /**
- * Representa la interfaz de usuario para realizar operaciones
+ * Permite realizar distintas operaciones
  */
-public class PanelOperaciones implements IUConsulta, IUDeposito, IURetiro, IUTransferencia {
+public class PanelOperaciones implements IConsulta, IDeposito, IRetiro, ITransferencia {
+
+    public void LeerEntrada() {
+    }
+
+    public void mostrarInformacion() {
+    }
+
     @Override
     public double consultarSaldo() {
         return 0;
@@ -22,11 +29,5 @@ public class PanelOperaciones implements IUConsulta, IUDeposito, IURetiro, IUTra
     @Override
     public void transferir(double monto) {
 
-    }
-
-    public void LeerEntrada() {
-    }
-
-    public void mostrarInformacion() {
     }
 }

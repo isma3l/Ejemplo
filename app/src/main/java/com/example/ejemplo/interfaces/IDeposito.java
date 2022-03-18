@@ -1,5 +1,5 @@
 package com.example.ejemplo.interfaces;
 
-public interface IUDeposito {
+public interface IDeposito {
     void depositar(double monto);
 }

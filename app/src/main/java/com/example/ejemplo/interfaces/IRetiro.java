@@ -1,5 +1,5 @@
 package com.example.ejemplo.interfaces;
 
-public interface IURetiro {
+public interface IRetiro {
     void retirar(double monto);
 }

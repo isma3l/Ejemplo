@@ -12,8 +12,8 @@ public class CuentaCorriente extends Cuenta{
     }
 
     @Override
-    public void retirar(double cantidad) {
-        saldo = saldo - cantidad - DESCUENTO;
-        Log.v(CuentaCorriente.class.getSimpleName(), String.valueOf(cantidad));
+    public void retirar(double monto) {
+        saldo = saldo - monto - DESCUENTO;
+        Log.v(CuentaCorriente.class.getSimpleName(), String.valueOf(monto));
     }
 }
